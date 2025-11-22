@@ -183,6 +183,7 @@ struct LayerSettings {
 
     std::shared_ptr<gui::DisplayLuts> luts;
 
+
     std::shared_ptr<IPCServerResourceCache> renderResourceCache;
     std::shared_ptr<RenderCommandBuffer> renderCommandBuffer;
 
@@ -196,6 +197,11 @@ struct LayerSettings {
         ftl_last = Behind,
     };
     SampleTarget postProcessTarget;
+
+#ifdef MTK_IN_DISPLAY_FINGERPRINT
+    bool enableDither = false;
+#endif
+
 };
 
 // Keep in sync with custom comparison function in
